@@ -154,6 +154,6 @@ def scholar_to_tex(html_doc, output, unwanted_strings=None):
     f.write("\\newcommand{\\citedate}{%s}\n" % datetime.date.today())
     f.write("\\newcommand{\\hindex}{%d}\n" % h_index)
     f.write("\\newcommand{\\numcites}{%d}\n" % total_cites)
-    f.write("\\newcommand{\printpubs}{%s}" %
+    f.write("\\newcommand{\\printpubs}{%s}" %
             "".join([bib_entry(pub) for pub in pubs]))
     f.close()
