@@ -149,6 +149,7 @@ def scholar_to_tex(html_doc, output, unwanted_strings=None):
 
     h_index, total_cites = citation_metrics(pubs)
     f = open(output, 'w')
+    f.write("\\UseRawInputEncoding")
     f.write("\\newcommand{\\citedata}{%s}\n" % " ".join(str(a) for a in cites.items()))
     f.write("\\newcommand{\\citedate}{%s}\n" % datetime.date.today())
     f.write("\\newcommand{\\hindex}{%d}\n" % h_index)
